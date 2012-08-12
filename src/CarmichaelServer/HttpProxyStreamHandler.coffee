@@ -7,12 +7,12 @@ class HttpProxyStreamHandler extends BaseStreamHandler
 
   # Public ctor.
   #
-  # @params args [Object] Costructor arguments.
+  # @params args [Object] Constructor arguments.
   #
   constructor: (args) ->
     super(args)
     @inFlightRequestRepo = args.inFlightRequestRepo
-	@myExpressApp = new MyExpressApp().app
+    @myExpressApp = new MyExpressApp().app
     @expressProcessingNode = new ExpressInternalRequestProcessingNode { 
       app : @myExpressApp
     }
@@ -84,10 +84,10 @@ class HttpProxyStreamHandler extends BaseStreamHandler
     res = new http.ServerResponse proxiedReq
     res.headers = []
 	
-	# TODO: Move and make user optional.
+    # TODO: Move and make user optional.
     res.setHeader 'X-RequestId', proxiedReq.id
     
-	stream._httpMessage = res
+    stream._httpMessage = res
     res.connection = stream
     res.writable = true
     res._writeRaw = (chunk, encoding) =>

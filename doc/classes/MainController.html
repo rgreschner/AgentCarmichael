@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>CoffeeScript API Documentation</title>
+  <link rel='stylesheet' href='../assets/codo.css' type='text/css'>
+  <script src='../assets/codo.js'></script>
+  <script src='../assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path='../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>MainController</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='../class_list.html'>Classes</a>
+      <a id='mixin_list_link' href='../mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='../method_list.html'>Methods</a>
+      <a id='file_list_link' href='../file_list.html'>Files</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        MainController
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>src/CarmichaelServer/MainController.coffee</td>
+        </tr>
+      </table>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <p>Main controller. </p> 
+</div>
+<div class='tags'>
+</div>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#constructor-instance'>
+        - (void) <strong>constructor</strong>(args)
+      </a>
+    </span>
+    <span class='constructor note title'>Constructor</span>
+    <span class='desc'>
+      Public ctor.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#createConnection-instance'>
+        - (void) <strong>createConnection</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getOrCreateConnectionForClient-instance'>
+        - (void) <strong>getOrCreateConnectionForClient</strong>(myClient)
+      </a>
+    </span>
+    <span class='desc'>
+      Get or create connection object for client.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#handleWebSocketStream-instance'>
+        - (void) <strong>handleWebSocketStream</strong>(myClient, stream, meta)
+      </a>
+    </span>
+    <span class='desc'>
+      Handle supplied WebSocket stream.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getHandlerForStreamWithType-instance'>
+        - (Object) <strong>getHandlerForStreamWithType</strong>(streamType, args)
+      </a>
+    </span>
+    <span class='desc'>
+      Get handler for stream with specific type.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getConnectionForClient-instance'>
+        - (void) <strong>getConnectionForClient</strong>(myClient)
+      </a>
+    </span>
+    <span class='desc'>
+      Get corresponding connection for client.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#setConnectionForClient-instance'>
+        - (void) <strong>setConnectionForClient</strong>(myClient, connection)
+      </a>
+    </span>
+    <span class='desc'>
+      Set correspondin#g connection object for client.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#acceptWebSocketConnection-instance'>
+        - (void) <strong>acceptWebSocketConnection</strong>(myClient)
+      </a>
+    </span>
+    <span class='desc'>
+      Accept WebSocket connections.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#defaultHttpHandler-instance'>
+        - (void) <strong>defaultHttpHandler</strong>(req, res)
+      </a>
+    </span>
+    <span class='desc'>
+      Default handler for HTTP requests.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#createHttpServer-instance'>
+        - (void) <strong>createHttpServer</strong>(serverArgs)
+      </a>
+    </span>
+    <span class='desc'>
+      Create HTTP server to use.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#createBinaryJsServer-instance'>
+        - (void) <strong>createBinaryJsServer</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#run-instance'>
+        - (void) <strong>run</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+</ul>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-instance'>
+      - (void) <strong>constructor</strong>(args)
+    </p>
+    <div class='docstring'>
+  <p>Public ctor. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>args</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Constructor arguments.</span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='createConnection-instance'>
+      - (void) <strong>createConnection</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getOrCreateConnectionForClient-instance'>
+      - (void) <strong>getOrCreateConnectionForClient</strong>(myClient)
+    </p>
+    <div class='docstring'>
+  <p>Get or create connection object for client. </p> <p>@returns [Object] Connection object for client. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='handleWebSocketStream-instance'>
+      - (void) <strong>handleWebSocketStream</strong>(myClient, stream, meta)
+    </p>
+    <div class='docstring'>
+  <p>Handle supplied WebSocket stream. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>myClient</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>BinaryJS client.</span>
+    </li>
+    <li>
+      <span class='name'>stream</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Stream to handle.</span>
+    </li>
+    <li>
+      <span class='name'>meta</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Stream meta data.</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getHandlerForStreamWithType-instance'>
+      - (Object) <strong>getHandlerForStreamWithType</strong>(streamType, args)
+    </p>
+    <div class='docstring'>
+  <p>Get handler for stream with specific type. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>streamType</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Type of stream.</span>
+    </li>
+    <li>
+      <span class='name'>args</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Handler constructor arguments.</span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Handler for stream.</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getConnectionForClient-instance'>
+      - (void) <strong>getConnectionForClient</strong>(myClient)
+    </p>
+    <div class='docstring'>
+  <p>Get corresponding connection for client. </p> <p>@returns [Object] Connection of client. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>myClient</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Client to get connection for.</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='setConnectionForClient-instance'>
+      - (void) <strong>setConnectionForClient</strong>(myClient, connection)
+    </p>
+    <div class='docstring'>
+  <p>Set correspondin#g connection object for client. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>myClient</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Client to set connection for.</span>
+    </li>
+    <li>
+      <span class='name'>connection</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Connection of client.</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='acceptWebSocketConnection-instance'>
+      - (void) <strong>acceptWebSocketConnection</strong>(myClient)
+    </p>
+    <div class='docstring'>
+  <p>Accept WebSocket connections. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>myClient</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Client to accept websocket connections for.</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='defaultHttpHandler-instance'>
+      - (void) <strong>defaultHttpHandler</strong>(req, res)
+    </p>
+    <div class='docstring'>
+  <p>Default handler for HTTP requests. </p> <p>@param res [Object9 HTTP response. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>req</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>HTTP request.</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='createHttpServer-instance'>
+      - (void) <strong>createHttpServer</strong>(serverArgs)
+    </p>
+    <div class='docstring'>
+  <p>Create HTTP server to use. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>serverArgs</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>Args to create server with.</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='createBinaryJsServer-instance'>
+      - (void) <strong>createBinaryJsServer</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='run-instance'>
+      - (void) <strong>run</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Sun Aug 12 2012 19:54:37 GMT+0200 (CEST)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v0.9.1
+  (Node.js v0.8.6).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>

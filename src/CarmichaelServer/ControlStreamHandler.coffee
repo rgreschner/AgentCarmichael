@@ -16,11 +16,16 @@ class ControlStreamHandler extends BaseStreamHandler
   getHandlerType: () ->
     return "control"
 	
+  handleControlCommand: (command) ->
+    if "ping" == command.method
+      console.log 'Got ping, sender time is \'{0}\'.'.format(command.params.time)
+    return
+	
   # Start stream handling.
   #
   handle: () ->
-    @stream.on 'data', (chunk) ->
-      if "ping" == chunk.toString()
-        console.log "Got ping"
+    @stream.on 'data', (chunk) =>
+      command = JSON.parse chunk
+      @handleControlCommand command
     return
 	

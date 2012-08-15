@@ -93,7 +93,14 @@ class MainController
   #
   doPingCallback: (stream2) ->
     try
-      stream2.write 'ping'
+      params = {
+        time: new Date().toString()
+      }
+      command = { 
+        method: 'ping',
+        params: params
+      }
+      stream2.write JSON.stringify(command)
       console.log 'ping'
     catch error
       @logger.error error

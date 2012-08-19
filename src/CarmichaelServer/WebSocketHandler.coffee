@@ -55,6 +55,7 @@ class WebSocketHandler
       address: internalSocket.upgradeReq.connection.remoteAddress,
       port: internalSocket.upgradeReq.connection.remotePort
     }
+    
     connection.remoteAddress = remoteAddress
     formatedRemoteAddress = '{0}:{1}'.format(remoteAddress.address, remoteAddress.port)
     
@@ -78,7 +79,7 @@ class WebSocketHandler
   getOrCreateConnectionForClient: (myClient) ->
     connection = @getConnectionForClient myClient
     if null == connection
-      connection = @createConnection()
+      connection = @createConnection(myClient)
     return connection
     
   isStreamAuthenticationNeeded: (streamType) ->
@@ -122,6 +123,7 @@ class WebSocketHandler
     handler = null
     
     args = {
+      connection: connection,
       stream: stream,
       meta: meta,
       logger: @logger,
@@ -146,10 +148,7 @@ class WebSocketHandler
   #
   # @returns [Object] New connection object.
   #
-  createConnection: () ->
-    connection = {
-      id : uuid.v4(),
-      handlers : []
-    }
+  createConnection: (myClient) ->
+    connection = new Connection(myClient)
     return connection
-   
+    

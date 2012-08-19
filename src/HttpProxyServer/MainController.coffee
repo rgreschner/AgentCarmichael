@@ -118,6 +118,8 @@ class MainController
       @doPingCallback stream2
       return
 
+
+      
     setInterval cbInterval, 1000
     return
 

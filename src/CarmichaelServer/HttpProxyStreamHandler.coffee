@@ -11,6 +11,7 @@ class HttpProxyStreamHandler extends BaseStreamHandler
   #
   constructor: (args) ->
     super(args)
+    @isHandling = false
     @inFlightRequestRepo = args.inFlightRequestRepo
     @myExpressApp = new MyExpressApp().app
     @expressProcessingNode = new ExpressInternalRequestProcessingNode { 
@@ -38,10 +39,17 @@ class HttpProxyStreamHandler extends BaseStreamHandler
   # Start stream handling.
   #
   handle: () ->
+  
+    @isHandling = true
     @stream.on 'error', (error) =>
       console.log error
-    @stream.on 'data', (chunk) =>
+      return
+      
+    cbHandleData = (chunk) =>
       @handleData chunk
+    @cbHandleData = cbHandleData
+    @stream.on 'data', cbHandleData
+    
     return 
   onParserGotUrl: (hp, buf, start, len) ->
     str = buf.toString('ascii', start, start + len)
@@ -210,6 +218,9 @@ class HttpProxyStreamHandler extends BaseStreamHandler
   #
   onHttpClientRequestFetchComplete: (proxiedReq, remoteRes, res) =>
   
+    if !@isHandling
+        return
+  
     remoteRes.useChunkedEncodingByDefault = false
     buffered = []
 
@@ -294,6 +305,10 @@ class HttpProxyStreamHandler extends BaseStreamHandler
   # @param chunk [Buffer] Raw data of HTTP request.
   #
   handleData: (chunk) ->
+  
+    if !@isHandling
+        return
+  
     # TODO: Find out why chunk is often null...
     if null == chunk || 0 == chunk.length
       # console.log "Chunk is null."
@@ -304,3 +319,5 @@ class HttpProxyStreamHandler extends BaseStreamHandler
     @hp.execute buffer, 0, buffer.length
 
     return
+  stop: () ->
+    @isHandling = false

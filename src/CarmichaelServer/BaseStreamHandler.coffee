@@ -15,6 +15,7 @@ class BaseStreamHandler extends EventEmitter
     @stream = args.stream
     @meta = args.meta
     @logger = args.logger
+    @connection = args.connection
 
     # Get handler type as string.
     @handlerType = @getHandlerType()
@@ -29,5 +30,9 @@ class BaseStreamHandler extends EventEmitter
   # Start stream handling.
   #
   handle: () ->
+    throw new Error 'Not implemented.'
+    return
+    
+  stop: () ->
     throw new Error 'Not implemented.'
     return

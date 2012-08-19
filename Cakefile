@@ -6,7 +6,7 @@ carmichaelServerSrcFiles  = [
   'ExpressInternalRequestProcessingNode', 'HttpProxyStreamHandler',
   'ProxyRequestPrepareInputNode', 'ProxyRequestFilterInputNode',
   'InFlightRequestRepository', 'MainController', 'MyExpressApp', 
-  'MyOtherExpressApp', 'WebSocketHandler', 'Program'
+  'MyOtherExpressApp', 'WebSocketHandler', '../Common/Connection', 'Program'
 ]
 
 
